@@ -1,0 +1,72 @@
+Selenium Class 4
+
+CSS Selectors (Cascading Style Sheet)
+it is another way of locating elements on the web page
+=======================================================================
+Syntax:
+tagname[attribute = 'attribute value']
+e.g.
+input[value = 'LOGIN']
+=======================================================================
+CSS does not give us an opportunity to locate the elements by its text
+=======================================================================
+Shortcuts for CSS:
+Shortcut for the className --> "."     (only for class)
+
+Syntax:
+tagname.classNameValue
+
+input.button
+=======================================================================
+Shortcut for ID --> "#"                (only for ID)
+
+Syntax:
+
+tagname#idValue
+
+input#txtPassword
+=======================================================================
+contains() method is CSS :
+
+* symbol represents contains method
+
+tagname[attribute *= 'partial attribute value']
+
+input[placeholder *= 'phone']
+=======================================================================
+starts-with method in CSS :
+
+^ (Circumflex) symbol represents starts-with method
+
+tagname[attribute ^= 'starting attribute value']
+
+input[aria-label ^= 'Pass']
+=======================================================================
+ends-with method in CSS :
+
+$ symbol represents ends-with method value in css
+
+tagname[attribute $= 'ends-with attribute value']
+
+a[href $= 'login']
+=======================================================================
+Xpath vs CSS
+-- CSS cannot locate the elements by text whereas Xpath can
+-- CSS has shortcuts
+-- Xpath does not have ends-with method
+-- CSS is faster that Xpath in locating elements
+-- CSS has more simple Syntax that Xpath
+=======================================================================
+WebElements Commands :
+
+consists of several methods where we can perform an action and get the elements state
+on the webpage
+
+isEnabled() --> boolean
+isDisplayed() --> boolean
+isSelected() --> boolean
+clear() --> void
+getText() --> String
+getAttribute() --> String
+submit() --> void
+
