@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.Iterator;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
@@ -23,8 +25,8 @@ Print out the title of the all pages
 
     public static void main(String[] args) throws InterruptedException {
 
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
+        System.setProperty("webdriver.gecko.driver", "drivers/geckodriver.exe");
+        WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -61,10 +63,11 @@ Print out the title of the all pages
         iterator.next();
         String newWindowMessageHandle=iterator.next();
         driver.close();
+        driver.switchTo().window(newWindowMessageHandle);
 
-        // below code is not working, not able to identify the text and interact with window
+        // below code is working only in FireFox
 
-        String textNewWindowMessage= driver.findElement(By.tagName("body")).getText();
+        String textNewWindowMessage= driver.findElement(By.xpath("/html/body")).getText();
         System.out.println(textNewWindowMessage);
         driver.close();
 
