@@ -81,3 +81,8 @@ identifying elements by its ancestors :
 identifying elements by its index :
 
 (//img[@class= 'ui-datepicker-trigger'])[2]
+=============================================================================================
+
+using and operator on the Xpath:
+
+//input[@id='user_phone' and @name='phone']
