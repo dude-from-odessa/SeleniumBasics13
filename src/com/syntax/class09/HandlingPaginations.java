@@ -13,7 +13,7 @@ public class HandlingPaginations {
     public static String url = "http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login";
 
     public static void main(String[] args) throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
         driver.get(url);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -35,9 +35,9 @@ public class HandlingPaginations {
 
         // adding an employee and saving
         WebElement firstName = driver.findElement(By.id("firstName"));
-        firstName.sendKeys("Diego");
+        firstName.sendKeys("Diegosss");
         WebElement lastName = driver.findElement(By.id("lastName"));
-        lastName.sendKeys("Asghar");
+        lastName.sendKeys("AsgharID");
 
         WebElement empIdField = driver.findElement(By.id("employeeId"));
         String empId = empIdField.getAttribute("value");
